@@ -1,15 +1,15 @@
-use std::fs::File;
-use std::io::Read;
+use crate::reader::read_into_lines;
 
 pub fn answer() {
     //read sample
     //read input
-    let lines = read_into_lines("src/day1/part1/input.txt");
-    // println!("{}", lines.join(","));
-    println!("{}", solve(&lines));
+    let part1_lines = read_into_lines("src/day1/part1/input.txt");
+    println!("Part 1: {}", part1(&part1_lines));
+    let part2_lines = read_into_lines("src/day1/part2/input.txt");
+    println!("Part 2: {}", part2(&part2_lines));
 }
 
-fn solve(lines: &Vec<String>) -> u32 {
+fn part1(lines: &Vec<String>) -> u32 {
     lines
         .into_iter()
         .map(|line| {
@@ -22,15 +22,6 @@ fn solve(lines: &Vec<String>) -> u32 {
         .sum()
 }
 
-fn read_into_lines(filename: &str) -> Vec<String> {
-    let mut file = match File::open(filename) {
-        Ok(file) => file,
-        Err(_) => panic!("404 - File not found :("),
-    };
-    let mut file_contents = String::new();
-    file.read_to_string(&mut file_contents)
-        .ok()
-        .expect("Unable to read file");
-    let lines: Vec<String> = file_contents.lines().map(|s| s.to_owned()).collect();
-    lines
+fn part2(lines: &Vec<String>) -> u32 {
+    0
 }
