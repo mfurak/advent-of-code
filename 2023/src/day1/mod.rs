@@ -23,5 +23,19 @@ fn part1(lines: &Vec<String>) -> u32 {
 }
 
 fn part2(lines: &Vec<String>) -> u32 {
-    0
+    let lines_with_digits: Vec<String> = lines
+        .iter()
+        .map(|line| {
+            line.replace("one", "one1one")
+                .replace("two", "two2two")
+                .replace("three", "three3three")
+                .replace("four", "four4four")
+                .replace("five", "five5five")
+                .replace("six", "six6six")
+                .replace("seven", "seven7seven")
+                .replace("eight", "eight8eight")
+                .replace("nine", "nine9nine")
+        })
+        .collect();
+    part1(&lines_with_digits)
 }
