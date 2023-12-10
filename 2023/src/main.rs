@@ -2,5 +2,6 @@ mod day1;
 mod reader;
 
 fn main() {
-    day1::answer();
+    println!("Day 1");
+    day1::solve();
 }

@@ -1,8 +1,6 @@
 use crate::reader::read_into_lines;
 
-pub fn answer() {
-    //read sample
-    //read input
+pub fn solve() {
     let part1_lines = read_into_lines("src/day1/part1/input.txt");
     println!("Part 1: {}", part1(&part1_lines));
     let part2_lines = read_into_lines("src/day1/part2/input.txt");
